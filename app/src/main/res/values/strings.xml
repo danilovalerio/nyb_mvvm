@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">NY Books MVVM</string>
+
+    <!--  Books Activity  -->
+    <string name="titulo_livros">Livros</string>
 </resources>
