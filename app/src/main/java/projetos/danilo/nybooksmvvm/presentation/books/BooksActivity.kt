@@ -24,6 +24,8 @@ class BooksActivity : AppCompatActivity() {
             setHasFixedSize(true)//para melhor performance
             adapter = BooksAdapter(getBooks())
         }
+
+        val viewModel: BooksViewModel = ViewModelProviders
     }
 
     //lista para teste manual
