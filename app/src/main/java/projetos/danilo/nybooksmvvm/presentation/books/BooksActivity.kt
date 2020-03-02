@@ -18,7 +18,9 @@ class BooksActivity : AppCompatActivity() {
         setSupportActionBar(toolbarPrincipal)
 
         with(recyclerBooks) {
-            layoutManager = LinearLayoutManager(this@BooksActivity, RecyclerView.VERTICAL, false)
+            layoutManager = LinearLayoutManager(this@BooksActivity, //chama o contexto de fora da BooksActivity
+                RecyclerView.VERTICAL,
+                false)
             setHasFixedSize(true)//para melhor performance
             adapter = BooksAdapter(getBooks())
         }
