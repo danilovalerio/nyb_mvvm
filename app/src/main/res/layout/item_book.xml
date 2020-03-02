@@ -7,12 +7,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
+        android:id="@+id/textoTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
         tools:text="Título"/>
 
     <TextView
+        android:id="@+id/textoAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
