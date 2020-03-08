@@ -2,6 +2,7 @@ package projetos.danilo.nybooksmvvm.presentation.books
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,24 +19,22 @@ class BooksActivity : AppCompatActivity() {
         toolbarPrincipal.title = getString(R.string.titulo_livros)
         setSupportActionBar(toolbarPrincipal)
 
-        with(recyclerBooks) {
-            layoutManager = LinearLayoutManager(this@BooksActivity, //chama o contexto de fora da BooksActivity
-                RecyclerView.VERTICAL,
-                false)
-            setHasFixedSize(true)//para melhor performance
-            adapter = BooksAdapter(getBooks())
-        }
-
         //configuração do viewmodel
         val viewModel: BooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
-    }
 
-    //lista para teste manual
-    fun getBooks(): List<Book> {
-        return listOf<Book>(
-            Book("Clean Code", "Robert C. Martin"),
-            Book("Programando com Kotlin", "Stephen Samuel"),
-            Book("Scrum e Agile em Projetos", "Fábio Cruz")
-        )
+        viewModel.livrosLiveData.observe(this, Observer {
+            //só acessa o it se nâo for nulo
+            it?.let { livros ->
+                with(recyclerBooks) {
+                    layoutManager = LinearLayoutManager(this@BooksActivity, //chama o contexto de fora da BooksActivity
+                        RecyclerView.VERTICAL,
+                        false)
+                    setHasFixedSize(true)//para melhor performance
+                    adapter = BooksAdapter(livros) // livros que está dentro da view model
+                }
+            }
+        })
+
+        viewModel.getBooks()
     }
 }
