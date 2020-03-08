@@ -2,6 +2,7 @@ package projetos.danilo.nybooksmvvm.presentation.books
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_books.*
@@ -25,7 +26,8 @@ class BooksActivity : AppCompatActivity() {
             adapter = BooksAdapter(getBooks())
         }
 
-        val viewModel: BooksViewModel = ViewModelProviders
+        //configuração do viewmodel
+        val viewModel: BooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
     }
 
     //lista para teste manual
