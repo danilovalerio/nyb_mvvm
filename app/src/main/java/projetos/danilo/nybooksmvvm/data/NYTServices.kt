@@ -1,7 +1,7 @@
 package projetos.danilo.nybooksmvvm.data
 
-import android.telecom.Call
 import projetos.danilo.nybooksmvvm.data.response.BookBodyResponse
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 

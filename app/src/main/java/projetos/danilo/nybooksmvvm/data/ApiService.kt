@@ -14,5 +14,5 @@ object ApiService {
             .build()
     }
 
-    val service = initRetroFit().create(NYTServices::class.java)
+    val service:NYTServices = initRetroFit().create(NYTServices::class.java)
 }
