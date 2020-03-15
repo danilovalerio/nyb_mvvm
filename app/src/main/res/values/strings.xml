@@ -3,4 +3,9 @@
 
     <!--  Books Activity  -->
     <string name="titulo_livros">Livros</string>
+
+    <!--  BooksDetails Activity  -->
+    <string name="book_details_title_label">Titulo</string>
+    <string name="book_details_description_label">Descrição</string>
+
 </resources>
