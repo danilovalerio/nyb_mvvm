@@ -1,8 +1,7 @@
 package projetos.danilo.nybooksmvvm.data.response
 
-import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true) //importante para fazer o parse
+//@JsonClass(generateAdapter = true) //importante para fazer o parse
 data class BookDetailsResponse (
     //@Json(name = "title") //como o nome é o mesmo não precisa do mapeamento
     val title: String,

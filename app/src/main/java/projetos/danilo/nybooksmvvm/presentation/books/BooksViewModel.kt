@@ -2,12 +2,7 @@ package projetos.danilo.nybooksmvvm.presentation.books
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import projetos.danilo.nybooksmvvm.data.ApiService
 import projetos.danilo.nybooksmvvm.data.model.Book
-import projetos.danilo.nybooksmvvm.data.response.BookBodyResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class BooksViewModel: ViewModel() {
     //não receber nenhuma referência da activity ou fragment aqui
@@ -16,34 +11,34 @@ class BooksViewModel: ViewModel() {
     val livrosLiveData: MutableLiveData<List<Book>> = MutableLiveData()
 
     fun getBooks(){
-        //livrosLiveData.value = createFakeBooks()
+        livrosLiveData.value = createFakeBooks()
 
-        ApiService.service.getBooks().enqueue(object : Callback<BookBodyResponse>{
-            override fun onResponse(
-                call: Call<BookBodyResponse>,
-                response: Response<BookBodyResponse>
-            ) {
-                if(response.isSuccessful){
-                    val books: MutableList<Book> = mutableListOf()
-
-                    response.body()?.let {bookBodyResponse ->
-                        for(result in bookBodyResponse.bookResults){
-                            val book: Book = Book(
-                                titulo = result.bookDetails[0].title,
-                                autor = result.bookDetails[0].author
-                            )
-
-                            books.add(book)
-                        }
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<BookBodyResponse>, t: Throwable) {
-
-            }
-
-        })
+//        ApiService.service.getBooks().enqueue(object : Callback<BookBodyResponse>{
+//            override fun onResponse(
+//                call: Call<BookBodyResponse>,
+//                response: Response<BookBodyResponse>
+//            ) {
+//                if(response.isSuccessful){
+//                    val books: MutableList<Book> = mutableListOf()
+//
+//                    response.body()?.let {bookBodyResponse ->
+//                        for(result in bookBodyResponse.bookResults){
+//                            val book: Book = Book(
+//                                titulo = result.bookDetails[0].title,
+//                                autor = result.bookDetails[0].author
+//                            )
+//
+//                            books.add(book)
+//                        }
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<BookBodyResponse>, t: Throwable) {
+//
+//            }
+//
+//        })
     }
 
     //lista para teste manual
