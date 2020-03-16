@@ -41,7 +41,7 @@ class BooksViewModel: ViewModel() {
 //        })
     }
 
-    //lista para teste manual
+    /** lista fake para teste manual */
     fun createFakeBooks(): List<Book> {
         return listOf<Book>(
             Book("Clean Code", "Robert C. Martin", "Descricao do livro clean code"),

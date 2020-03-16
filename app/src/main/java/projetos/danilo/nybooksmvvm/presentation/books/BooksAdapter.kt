@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_book.view.*
 import projetos.danilo.nybooksmvvm.R
 import projetos.danilo.nybooksmvvm.data.model.Book
 
-class BooksAdapter(
+class BooksAdapter (
         val livros: List<Book>,
         val onItemClickListener: ((book: Book) -> Unit) //uma lâmbda ao invés de interface
 ) : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
