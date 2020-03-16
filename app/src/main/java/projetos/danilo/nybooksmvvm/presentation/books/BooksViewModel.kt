@@ -44,9 +44,9 @@ class BooksViewModel: ViewModel() {
     //lista para teste manual
     fun createFakeBooks(): List<Book> {
         return listOf<Book>(
-            Book("Clean Code", "Robert C. Martin"),
-            Book("Programando com Kotlin", "Stephen Samuel"),
-            Book("Scrum e Agile em Projetos", "Fábio Cruz")
+            Book("Clean Code", "Robert C. Martin", "Descricao do livro clean code"),
+            Book("Programando com Kotlin", "Stephen Samuel", "Descricao do livro prog com Kotlin"),
+            Book("Scrum e Agile em Projetos", "Fábio Cruz", "Descricao do livro scrum agile")
         )
     }
 }
