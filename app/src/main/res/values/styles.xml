@@ -6,8 +6,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
         <!--    Customização do fundo do conteúdo    -->
-        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+        <!--    Sobrescrevendo o style do textView    -->
+        <item name="android:textViewStyle">@style/MinhaTextView</item>
+    </style>
+
+    <style name="MinhaTextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MinhaTextViewLabel">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+
     </style>
 
 </resources>

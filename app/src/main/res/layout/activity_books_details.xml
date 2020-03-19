@@ -10,32 +10,28 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/MinhaTextViewLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="@string/book_details_title_label"
-        android:textColor="@android:color/black"/>
+        android:text="@string/book_details_title_label"/>
 
     <TextView
         android:id="@+id/booksDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         tools:text="Título 1" />
 
     <TextView
+        style="@style/MinhaTextViewLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:layout_marginTop="8dp"
-        android:text="@string/book_details_description_label"
-        android:textColor="@android:color/black"/>
+        android:text="@string/book_details_description_label"/>
 
     <TextView
         android:id="@+id/booksDetailDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         tools:text="Descrição 1" />
 
 </LinearLayout>
