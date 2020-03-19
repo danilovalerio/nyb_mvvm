@@ -1,6 +1,5 @@
 package projetos.danilo.nybooksmvvm.presentation.books
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -9,17 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_books.*
 import kotlinx.android.synthetic.main.include_toolbar.*
 import projetos.danilo.nybooksmvvm.R
-import projetos.danilo.nybooksmvvm.data.model.Book
+import projetos.danilo.nybooksmvvm.R.string.titulo_livros
+import projetos.danilo.nybooksmvvm.presentation.base.BaseActivity
 import projetos.danilo.nybooksmvvm.presentation.details.BooksDetailsActivity
 
-class BooksActivity : AppCompatActivity() {
+class BooksActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_books)
 
-        toolbarPrincipal.title = getString(R.string.titulo_livros)
-        setSupportActionBar(toolbarPrincipal)
+        configurarToolbar(toolbarPrincipal, titulo_livros)
 
         //configuração do viewmodel
         val viewModel: BooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)

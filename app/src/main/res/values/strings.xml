@@ -8,4 +8,6 @@
     <string name="book_details_title_label">Titulo</string>
     <string name="book_details_description_label">Descrição</string>
 
+    <string name="detalhes_livro">Detalhes do livro</string>
+
 </resources>

@@ -2,16 +2,19 @@ package projetos.danilo.nybooksmvvm.presentation.details
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_books_details.*
+import kotlinx.android.synthetic.main.include_toolbar.*
 import projetos.danilo.nybooksmvvm.R
+import projetos.danilo.nybooksmvvm.presentation.base.BaseActivity
 
-class BooksDetailsActivity : AppCompatActivity() {
+class BooksDetailsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_books_details)
+
+        configurarToolbar(toolbarPrincipal, R.string.detalhes_livro)
 
         /**pegamos o que virá da intent*/
         val titulo = intent.getStringExtra(EXTRA_TITULO)
