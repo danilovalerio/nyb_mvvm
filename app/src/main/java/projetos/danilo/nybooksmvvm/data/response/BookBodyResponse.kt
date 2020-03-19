@@ -1,10 +1,13 @@
 package projetos.danilo.nybooksmvvm.data.response
+
+import com.google.gson.annotations.SerializedName
+
 //
 //import com.squareup.moshi.Json
 //import com.squareup.moshi.JsonClass
 
 //@JsonClass(generateAdapter = true)
 data class BookBodyResponse (
-//    @Json(name = "results")
-    val bookResults: List<BookResultsResponse>
+    @SerializedName("results")
+    var bookResults: List<BookResultsResponse>
 )

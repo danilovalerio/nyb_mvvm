@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "projetos.danilo.nybooksmvvm"
@@ -29,7 +29,7 @@ android {
 ext {
     supportVersion = "1.1.0"
     supportVersionCore = "1.2.0"
-    versionRetrofit = "2.7.1"
+    versionRetrofit = "2.5.0"
 }
 
 dependencies {
@@ -48,6 +48,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+//    implementation 'com.squareup.okhttp3:okhttp:3.14.4'
+//    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation "com.squareup.retrofit2:retrofit:$versionRetrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versionRetrofit"
+
+
 
 //    implementation "com.squareup.retrofit2:retrofit:$versionRetrofit"
 //    implementation "com.squareup.retrofit2:converter-moshi:$versionRetrofit"
