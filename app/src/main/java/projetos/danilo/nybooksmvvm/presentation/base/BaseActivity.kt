@@ -6,14 +6,11 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 
-class BaseActivity : AppCompatActivity() {
+//open é necessário, pois por padrão toda classe kotlin é private
+open class BaseActivity : AppCompatActivity() {
 
     protected fun setupToolbar(toolbar: Toolbar, tituloIdRes: Int){
         toolbar.title = getString(tituloIdRes)
         setSupportActionBar(toolbar)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 }
