@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".presentation.base.BaseActivity"></activity>
-        <activity android:name=".presentation.details.BooksDetailsActivity" />
+        <activity android:name=".presentation.details.BooksDetailsActivity"
+            android:parentActivityName=".presentation.books.BooksActivity"/>
         <activity android:name=".presentation.books.BooksActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

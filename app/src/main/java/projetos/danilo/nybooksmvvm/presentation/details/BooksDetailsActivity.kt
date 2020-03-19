@@ -14,7 +14,7 @@ class BooksDetailsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_books_details)
 
-        configurarToolbar(toolbarPrincipal, R.string.detalhes_livro)
+        configurarToolbar(toolbarPrincipal, R.string.detalhes_livro, true)
 
         /**pegamos o que virá da intent*/
         val titulo = intent.getStringExtra(EXTRA_TITULO)
