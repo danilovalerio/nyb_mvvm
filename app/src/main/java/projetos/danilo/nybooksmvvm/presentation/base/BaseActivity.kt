@@ -9,8 +9,8 @@ import androidx.appcompat.widget.Toolbar
 //open é necessário, pois por padrão toda classe kotlin é private
 open class BaseActivity : AppCompatActivity() {
 
-    protected fun setupToolbar(toolbar: Toolbar, tituloIdRes: Int){
-        toolbar.title = getString(tituloIdRes)
+    protected fun setupToolbar(toolbar: Toolbar, tituloIdResource: Int){
+        toolbar.title = getString(tituloIdResource)
         setSupportActionBar(toolbar)
     }
 }
