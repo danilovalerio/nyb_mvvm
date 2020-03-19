@@ -8,12 +8,7 @@
     tools:context=".presentation.details.BooksDetailsActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarPrincipal"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        />
+    <include layout="@layout/include_toolbar"/>
 
     <TextView
         style="@style/MinhaTextViewLabel"
