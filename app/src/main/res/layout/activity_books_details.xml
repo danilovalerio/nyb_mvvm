@@ -6,20 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.details.BooksDetailsActivity"
-    android:padding="16dp"
     android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        />
 
     <TextView
         style="@style/MinhaTextViewLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/book_details_title_label"/>
+        android:text="@string/book_details_title_label" />
 
     <TextView
         android:id="@+id/booksDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Título 1" />
+        tools:text="Título 1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
 
     <TextView
         style="@style/MinhaTextViewLabel"
@@ -32,6 +40,8 @@
         android:id="@+id/booksDetailDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Descrição 1" />
+        tools:text="Descrição 1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
 
 </LinearLayout>
