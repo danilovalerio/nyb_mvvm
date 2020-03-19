@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_books.*
+import kotlinx.android.synthetic.main.include_toolbar.*
 import projetos.danilo.nybooksmvvm.R
 import projetos.danilo.nybooksmvvm.data.model.Book
 import projetos.danilo.nybooksmvvm.presentation.details.BooksDetailsActivity
