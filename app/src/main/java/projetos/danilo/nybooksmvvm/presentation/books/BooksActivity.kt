@@ -2,7 +2,6 @@ package projetos.danilo.nybooksmvvm.presentation.books
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_books.*
@@ -13,15 +12,14 @@ import projetos.danilo.nybooksmvvm.presentation.base.BaseActivity
 import projetos.danilo.nybooksmvvm.presentation.details.BooksDetailsActivity
 
 class BooksActivity : BaseActivity() {
+    /**configuração do viewmodel*/
+    private val viewModel by lazy { provideBooksViewModel(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_books)
 
         configurarToolbar(toolbarPrincipal, titulo_livros)
-
-        /**configuração do viewmodel*/
-        val viewModel: BooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
         viewModel.livrosLiveData.observe(this, Observer {
             /**Com o uso do let só acessa o it se nâo for nulo*/
