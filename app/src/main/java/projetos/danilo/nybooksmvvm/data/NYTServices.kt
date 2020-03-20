@@ -1,14 +1,9 @@
 package projetos.danilo.nybooksmvvm.data
 
-import projetos.danilo.nybooksmvvm.data.model.Book
 import projetos.danilo.nybooksmvvm.data.response.BookBodyResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-
-//import retrofit2.Call
-//import retrofit2.http.GET
-//import retrofit2.http.Query
 
 interface NYTServices {
 
