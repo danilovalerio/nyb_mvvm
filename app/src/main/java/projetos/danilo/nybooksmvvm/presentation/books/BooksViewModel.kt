@@ -15,6 +15,7 @@ class BooksViewModel : ViewModel() {
     /**
      * LiveData é componente sugerido para fazer a comunicação com a View*/
     val livrosLiveData: MutableLiveData<List<Book>> = MutableLiveData()
+    val viewFlipperLiveData: MutableLiveData<Int> = MutableLiveData()
 
     fun getBooks() {
 //        livrosLiveData.value = createFakeBooks()
@@ -39,7 +40,10 @@ class BooksViewModel : ViewModel() {
                         }
 
                         livrosLiveData.value = books
+                        viewFlipperLiveData.value = VIEW_FLIPPER_BOOKS
                     }
+                } else if (response.code() == 401) {
+                    viewFlipperLiveData.value = VIEW_FLIPPER_ERROR
                 }
             }
 
@@ -48,6 +52,13 @@ class BooksViewModel : ViewModel() {
             }
 
         })
+    }
+
+    /**Mapemento das posições do ViewFlipper*/
+    companion object {
+//        private const val VIEW_FLIPPER_LOADER = 0 //já carregada por padrão
+        private const val VIEW_FLIPPER_BOOKS = 1
+        private const val VIEW_FLIPPER_ERROR = 2
     }
 
     /** lista fake para teste manual */
