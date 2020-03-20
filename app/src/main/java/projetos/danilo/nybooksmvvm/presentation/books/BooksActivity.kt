@@ -1,6 +1,7 @@
 package projetos.danilo.nybooksmvvm.presentation.books
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,12 +26,19 @@ class BooksActivity : BaseActivity() {
             /**Com o uso do let só acessa o it se nâo for nulo*/
             it?.let { livros ->
                 with(recyclerBooks) {
-                    layoutManager = LinearLayoutManager(this@BooksActivity, //chama o contexto de fora da BooksActivity
+                    layoutManager = LinearLayoutManager(
+                        this@BooksActivity, //chama o contexto de fora da BooksActivity
                         RecyclerView.VERTICAL,
-                        false)
+                        false
+                    )
                     setHasFixedSize(true)//para melhor performance
-                    adapter = BooksAdapter(livros) {book ->
-                        val intent = BooksDetailsActivity.getStartIntent(this@BooksActivity, book.titulo, book.descricao)
+                    adapter = BooksAdapter(livros) { book ->
+                        showMessageBookSelected(book.titulo)
+                        val intent = BooksDetailsActivity.getStartIntent(
+                            this@BooksActivity,
+                            book.titulo,
+                            book.descricao
+                        )
                         this@BooksActivity.startActivity(intent)
                     } // livros que estão dentro da viewmodel
                 }
@@ -38,18 +46,20 @@ class BooksActivity : BaseActivity() {
         })
 
         viewModel.viewFlipperLiveData.observe(this, Observer {
-            it?.let {
-                viewFlipper->
+            it?.let { viewFlipper ->
                 viewFlipperBooks.displayedChild = viewFlipper.first
 
-                viewFlipper.second?.let {erroMessageRespostaId ->
+                viewFlipper.second?.let { erroMessageRespostaId ->
                     tvError.text = getString(erroMessageRespostaId)
-
                 }
             }
 
         })
 
         viewModel.getBooks()
+    }
+
+    private fun showMessageBookSelected(message: CharSequence) {
+        Toast.makeText(this, "$message \nFOI SELECIONADO", Toast.LENGTH_LONG).show()
     }
 }
