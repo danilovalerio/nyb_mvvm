@@ -9,5 +9,4 @@ data class BookDetailsResponse (
     val author: String,
     @SerializedName("description") //como o nome é o mesmo não precisaria do mapeamento
     val description: String
-
 )
