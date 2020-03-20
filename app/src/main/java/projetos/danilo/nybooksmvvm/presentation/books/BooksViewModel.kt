@@ -2,6 +2,7 @@ package projetos.danilo.nybooksmvvm.presentation.books
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import projetos.danilo.nybooksmvvm.R
 import projetos.danilo.nybooksmvvm.data.ApiService
 import projetos.danilo.nybooksmvvm.data.model.Book
 import projetos.danilo.nybooksmvvm.data.response.BookBodyResponse
@@ -15,7 +16,7 @@ class BooksViewModel : ViewModel() {
     /**
      * LiveData é componente sugerido para fazer a comunicação com a View*/
     val livrosLiveData: MutableLiveData<List<Book>> = MutableLiveData()
-    val viewFlipperLiveData: MutableLiveData<Int> = MutableLiveData()
+    val viewFlipperLiveData: MutableLiveData<Pair<Int, Int?>> = MutableLiveData()
 
     fun getBooks() {
 //        livrosLiveData.value = createFakeBooks()
@@ -40,15 +41,17 @@ class BooksViewModel : ViewModel() {
                         }
 
                         livrosLiveData.value = books
-                        viewFlipperLiveData.value = VIEW_FLIPPER_BOOKS
+                        viewFlipperLiveData.value = Pair(VIEW_FLIPPER_BOOKS, null)
                     }
                 } else if (response.code() == 401) {
-                    viewFlipperLiveData.value = VIEW_FLIPPER_ERROR
+                    viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.books_error_401)
+                } else {
+                    viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.books_error_400)
                 }
             }
 
             override fun onFailure(call: Call<BookBodyResponse>, t: Throwable) {
-
+                viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.books_error_500)
             }
 
         })
