@@ -11,7 +11,7 @@ import projetos.danilo.nybooksmvvm.data.model.Book
 
 class BooksAdapter (
         val livros: List<Book>,
-        val onItemClickListener: ((book: Book) -> Unit) //uma lâmbda ao invés de interface
+        val onItemClickListener: ((book: Book) -> Unit) /**uma lâmbda ao invés de interface*/
 ) : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BooksViewHolder {

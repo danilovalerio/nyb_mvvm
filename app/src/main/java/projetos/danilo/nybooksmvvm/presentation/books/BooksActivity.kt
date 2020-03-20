@@ -1,6 +1,5 @@
 package projetos.danilo.nybooksmvvm.presentation.books
 
-import android.app.Application
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -21,11 +20,11 @@ class BooksActivity : BaseActivity() {
 
         configurarToolbar(toolbarPrincipal, titulo_livros)
 
-        //configuração do viewmodel
+        /**configuração do viewmodel*/
         val viewModel: BooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
         viewModel.livrosLiveData.observe(this, Observer {
-            //só acessa o it se nâo for nulo
+            /**Com o uso do let só acessa o it se nâo for nulo*/
             it?.let { livros ->
                 with(recyclerBooks) {
                     layoutManager = LinearLayoutManager(this@BooksActivity, //chama o contexto de fora da BooksActivity
@@ -35,7 +34,7 @@ class BooksActivity : BaseActivity() {
                     adapter = BooksAdapter(livros) {book ->
                         val intent = BooksDetailsActivity.getStartIntent(this@BooksActivity, book.titulo, book.descricao)
                         this@BooksActivity.startActivity(intent)
-                    } // livros que está dentro da view model
+                    } // livros que estão dentro da viewmodel
                 }
             }
         })
