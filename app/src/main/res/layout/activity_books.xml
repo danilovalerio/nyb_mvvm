@@ -13,13 +13,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--  Exibe somente o 1 filho dele  -->
+    <!--  Exibe o 1 filho dele por padrão  -->
     <ViewFlipper
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarPrincipal">
+        app:layout_constraintTop_toBottomOf="@+id/toolbarPrincipal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ProgressBar
             android:layout_width="wrap_content"
@@ -31,6 +32,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_book" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Erro 401"/>
 
     </ViewFlipper>
 
